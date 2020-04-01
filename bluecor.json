@@ -1,0 +1,753 @@
+{
+  "monitor": {
+    "": ""
+  },
+  "medicines": [
+    "Adrenalina",
+    "Amiodarona",
+    "Atropina"
+  ],
+  "stepbystep": [
+    {
+      "slug": "step1",
+      "stepTitle": "Passo 1",
+      "action": "Solicitar",
+      "description": "Equipe, Carro PCR com desfibilador, Dispositivo Bolsa-Válvula-Máscara (AMBU)",
+      "options": {
+        
+      },
+      "next": {
+        
+      },
+      "nextStep": "step2"
+    },
+    {
+      "slug": "step2",
+      "stepTitle": "Passo 2",
+      "action": "Abrir vias aéreas",
+      "description": "Fazer duas ventilações de resgate",
+      "options": {
+        
+      },
+      "next": {
+        "type": "warning-question",
+        "message": "O paciente sofreu algum acidente que pode ter causado trauma na medula?",
+        "next": {
+          
+        },
+        "options": [
+          {
+            "title": "Sim",
+            "type": "button",
+            "next": {
+              "type": "confirm",
+              "message": "Imobilização da coluna, manobra de anteriorização da mandíbula",
+              "next": {
+                "type": "confirm",
+                "message": "Fazer duas ventilações de resgate com AMBU Bolsa-Válvula-Máscara!",
+                "next": {
+                  "type": "question",
+                  "message": "Vias aéreas desobstruídas?",
+                  "next": {
+                    
+                  },
+                  "options": [
+                    {
+                      "title": "Sim",
+                      "next": {
+                        "type": "confirm",
+                        "message": "Manter ventilação com dispositivo Bolsa - Válvula - Máscara (AMBU)",
+                        "next": {
+                          
+                        },
+                        "nextStep": "step3_2"
+                      },
+                      "nextStep": null
+                    },
+                    {
+                      "title": "Não",
+                      "next": {
+                        "type": "confirm",
+                        "message": "Obstrução de vias aéreas por corpo estranho - OVACE",
+                        "next": {
+                          "type": "end-procedure"
+                        },
+                        "nextStep": null
+                      },
+                      "nextStep": null
+                    }
+                  ]
+                }
+              },
+              "nextStep": null
+            },
+            "nextStep": null
+          },
+          {
+            "title": "Não",
+            "type": "button",
+            "next": {
+              "type": "confirm",
+              "message": "Extensão do pescoço, elevação da mandibula",
+              "next": {
+                "type": "confirm",
+                "message": "Fazer duas ventilações de resgate com AMBU Bolsa-Válvula-Máscara!",
+                "next": {
+                  "type": "question",
+                  "message": "Vias aéreas desobstruídas?",
+                  "next": {
+                    
+                  },
+                  "options": [
+                    {
+                      "title": "Sim",
+                      "next": {
+                        "type": "confirm",
+                        "message": "Manter ventilação com dispositivo Bolsa - Válvula - Máscara (AMBU)",
+                        "next": {
+                          
+                        },
+                        "nextStep": "step3_2"
+                      },
+                      "nextStep": null
+                    },
+                    {
+                      "title": "Não",
+                      "next": {
+                        "type": "confirm",
+                        "message": "Obstrução de vias aéreas por corpo estranho - OVACE",
+                        "next": {
+                          "type": "end-procedure"
+                        },
+                        "nextStep": null
+                      },
+                      "nextStep": null
+                    }
+                  ]
+                },
+                "nextStep": null
+              }
+            },
+            "nextStep": null
+          }
+        ],
+        "nextStep": null
+      },
+      "nextStep": null
+    },
+    {
+      "slug": "step3_0",
+      "stepTitle": "Passo 3",
+      "action": "Solicitar Monitor",
+      "description": "Solicitar Acesso Venoso",
+      "options": {
+        
+      },
+      "next": {
+        
+      },
+      "nextStep": "step3_1"
+    },
+    {
+      "slug": "step3_1",
+      "stepTitle": "Passo 3",
+      "action": "Monitorizar",
+      "description": "Identificar o rítmo cardíaco",
+      "options": {
+        
+      },
+      "next": {
+        "type": "confirm",
+        "message": "Identificar rítmo cardíaco!",
+        "next": {
+          "type": "question",
+          "message": "O rítmo é chocável?",
+          "next": {
+            
+          },
+          "options": [
+            {
+              "title": "Sim",
+              "type": "button",
+              "next": {
+                "type": "options-list",
+                "message": "",
+                "next": {
+                  
+                },
+                "options": [
+                  {
+                    "type": "image-list",
+                    "options": [
+                      {
+                        "title": "Taquicardia Ventricular",
+                        "status": "Sem pulso - 200J a 300J",
+                        "details": {
+                          "item1": "Bifásico 200J",
+                          "item2": "Monofásico: 350J",
+                          "image": "URL_IMAGE"
+                        },
+                        "next": {
+                          "type": "procedure_check_monitor",
+                          "message": "",
+                          "details": {
+                            "item1": "Bifásico 200J",
+                            "item2": "Monofásico: 350J",
+                            "image": "URL_IMAGE"
+                          },
+                          "next": {
+                            "title": "Choque",
+                            "type": "shock-stepbystep",
+                            "message": "1. Ligar o aparelho\n\n2. Pegar e identificar as pás (ápex e esterno)\n\n3. Colocar gel nas pás\n\n4. Selecionar o modo (desfibrilador)",
+                            "next": {
+                              "title": "Choque",
+                              "type": "before-monitor-shock",
+                              "next": {
+                                "title": "",
+                                "type": "",
+                                "next": {
+                                  
+                                },
+                                "nextStep": null
+                              },
+                              "message": "Mantenha as compressões e ventilações por 2 min.\n\nEm seguida monitore novamente.",
+                              "nextStep": "step3_2"
+                            },
+                            "nextStep": null
+                          },
+                          "nextStep": null
+                        }
+                      },
+                      {
+                        "title": "Fibrilação Ventricular",
+                        "status": "Carga máxima",
+                        "details": {
+                          "item1": "Carga máxima",
+                          "item2": "",
+                          "image": "URL_IMAGE"
+                        },
+                        "next": {
+                          "type": "procedure_check_monitor",
+                          "message": "",
+                          "details": {
+                            "item1": "Carga máxima",
+                            "item2": "",
+                            "image": "URL_IMAGE"
+                          },
+                          "next": {
+                            "title": "Choque",
+                            "type": "shock-stepbystep",
+                            "message": "1. Ligar o aparelho\n\n2. Pegar e identificar as pás (ápex e esterno)\n\n3. Colocar gel nas pás\n\n4. Selecionar o modo (desfibrilador)",
+                            "next": {
+                              "title": "Choque",
+                              "type": "before-monitor-shock",
+                              "next": {
+                                "title": "",
+                                "type": "",
+                                "next": {
+                                  
+                                },
+                                "nextStep": null
+                              },
+                              "message": "Mantenha as compressões e ventilações por 2 min.\n\nEm seguida monitore novamente.",
+                              "nextStep": "step3_2"
+                            },
+                            "nextStep": null
+                          },
+                          "nextStep": null
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Não",
+              "type": "button",
+              "next": {
+                "type": "question",
+                "message": "O paciente apresenta pulso?",
+                "next": {
+                  
+                },
+                "options": [
+                  {
+                    "title": "Sim",
+                    "type": "button",
+                    "next": {
+                      "type": "cares",
+                      "message": "",
+                      "next": {
+                        
+                      },
+                      "nextStep": null
+                    }
+                  },
+                  {
+                    "title": "Não",
+                    "type": "button",
+                    "next": {
+                      "type": "question",
+                      "message": "O paciente tem atividade elétrica?",
+                      "next": {
+                        
+                      },
+                      "options": [
+                        {
+                          "title": "Sim",
+                          "type": "button",
+                          "next": {
+                            "type": "confirm",
+                            "message": "AESP",
+                            "next": {
+                              "type": "confirm",
+                              "message": "Manter compressões externas",
+                              "next": {
+                                
+                              },
+                              "nextStep": "step4"
+                            },
+                            "nextStep": null
+                          }
+                        },
+                        {
+                          "title": "Não",
+                          "type": "button",
+                          "next": {
+                            "type": "checks-question",
+                            "title": "Antes de prosseguir, verifique esses pontos:",
+                            "message": "1. Verificar cabos\n\n2. Aumentar ganho do monitor\n\n3. Trocar derivações",
+                            "options": [
+                              {
+                                "title": "Prosseguir",
+                                "type": "button",
+                                "next": {
+                                  "title": "",
+                                  "type": "confirm",
+                                  "message": "Assistolia",
+                                  "next": {
+                                    "title": "",
+                                    "type": "confirm",
+                                    "message": "Obter via aérea avançada!",
+                                    "next": {
+                                      "title": "Ausculta de posicionamento",
+                                      "type": "stepbystep-list",
+                                      "message": "1. Confirmar na primeira ventilação, não parar a MCE\n\n2. Ausculta cardíaca em 5 pontos:\nEstômago (Sem sons)\nTórax (Base do pulmão D+E e ápice D+E)",
+                                      "options": [
+                                        {
+                                          "list": [
+                                            {
+                                              "title": "",
+                                              "status": "Pontos a serem auscultados",
+                                              "details": {
+                                                
+                                              },
+                                              "next": {
+                                                "type": "ausculta",
+                                                "message": "",
+                                                "options": [
+                                                  {
+                                                    "title": "Sim",
+                                                    "type": "button",
+                                                    "next": {
+                                                      "title": "",
+                                                      "type": "confirm-advanced-airway",
+                                                      "next": {
+                                                        
+                                                      },
+                                                      "nextStep": null
+                                                    },
+                                                    "nextStep": "step_monitor"
+                                                  },
+                                                  {
+                                                    "title": "Não",
+                                                    "type": "button",
+                                                    "next": {
+                                                      "title": "Via aérea avançada",
+                                                      "type": "bad-positioning",
+                                                      "next": {
+                                                        
+                                                      },
+                                                      "options": [
+                                                        {
+                                                          "title": "Intubação Esofágica",
+                                                          "type": "button",
+                                                          "next": {
+                                                            "title": "Intubação esofágica",
+                                                            "type": "how-to-do",
+                                                            "next": {
+                                                              "title": "",
+                                                              "type": "confirm-advanced-airway",
+                                                              "next": {
+                                                                
+                                                              },
+                                                              "nextStep": null
+                                                            },
+                                                            "message": "1. Desinsuflar o balonete\n\n2. Reiniciar as compressões externas +\nBMV por um novo ciclo\n\n3. Trocar o tubo se possível\n\n4. Após um novo ciclo reintubar",
+                                                            "nextStep": null
+                                                          },
+                                                          "nextStep": null
+                                                        },
+                                                        {
+                                                          "title": "Intubação orotraqueal",
+                                                          "type": "button",
+                                                          "next": {
+                                                            "title": "Intubação orotraqueal",
+                                                            "type": "how-to-do",
+                                                            "next": {
+                                                              "title": "",
+                                                              "type": "confirm-advanced-airway",
+                                                              "next": {
+                                                                
+                                                              },
+                                                              "nextStep": null
+                                                            },
+                                                            "message": "1. Desinsuflar o balonete\n\n2. Reiniciar as compressões externas +\nBMV por um novo ciclo\n\n3. Recuar o tubo em 2cm\n\n4. Confirmar a posição do tubo",
+                                                            "nextStep": null
+                                                          },
+                                                          "nextStep": null
+                                                        }
+                                                      ],
+                                                      "nextStep": null
+                                                    },
+                                                    "nextStep": "step_monitor"
+                                                  }
+                                                ],
+                                                "next": {
+                                                  
+                                                },
+                                                "nextStep": null
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ],
+                                      "next": {
+                                        "title": "Ausculta de posicionamento",
+                                        "type": "positioning-question",
+                                        "message": "1. Confirmar na primeira ventilação, não parar a MCE \n\n2. Ausculta cardíaca em 5 pontos: \n      Estômago (Sem sons) \n      Tórax (Base do pulmão D+E e ápice D+E)",
+                                        "options": [
+                                          {
+                                            "title": "Sim",
+                                            "type": "button",
+                                            "next": {
+                                              "title": "",
+                                              "type": "advanced-airway",
+                                              "next": {
+                                                
+                                              },
+                                              "nextStep": null
+                                            },
+                                            "nextStep": null
+                                          },
+                                          {
+                                            "title": "Não",
+                                            "type": "button",
+                                            "next": {
+                                              "title": "",
+                                              "type": "advanced-airway",
+                                              "next": {
+                                                
+                                              },
+                                              "nextStep": null
+                                            },
+                                            "nextStep": null
+                                          }
+                                        ],
+                                        "next": {
+                                          
+                                        },
+                                        "nextStep": null
+                                      },
+                                      "nextStep": null
+                                    },
+                                    "nextStep": null
+                                  },
+                                  "nextStep": null
+                                },
+                                "nextStep": null
+                              },
+                              {
+                                "title": "Cancelar",
+                                "type": "button",
+                                "next": {
+                                  
+                                },
+                                "nextStep": null
+                              }
+                            ],
+                            "next": {
+                              
+                            },
+                            "nextStep": null
+                          },
+                          "nextStep": null
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "nextStep": null
+      },
+      "nextStep": null
+    },
+    {
+      "slug": "step3_2",
+      "stepTitle": "Passo 3",
+      "action": "Monitorar",
+      "description": "Monitore os sinais vitais do paciente",
+      "next": {
+        
+      },
+      "options": {
+        "monitorTimer": 120
+      },
+      "nextStep": "step3_1"
+    },
+    {
+      "slug": "step4",
+      "stepTitle": "Passo 4",
+      "action": "",
+      "description": "Verificar Acesso Venoso",
+      "options": {
+        
+      },
+      "next": {
+        "type": "question",
+        "message": "Acesso venoso estabelecido e patente?",
+        "next": {
+          
+        },
+        "options": [
+          {
+            "title": "Sim",
+            "type": "button",
+            "next": {
+              "type": "drug",
+              "message": "Aplicar droga",
+              "nextStep": "step3_2",
+              "options": [
+                {
+                  "title": "Acesso venoso",
+                  "description": "Adrenalina 1:1000",
+                  "dosage": "1 mL",
+                  "observations": "Infundir 20 mL de SF rápido, após Adrenalina.\nElevar o braço por 15s",
+                  "next": {
+                    
+                  },
+                  "nextStep": null
+                }
+              ]
+            }
+          },
+          {
+            "title": "Não",
+            "type": "button",
+            "next": {
+              "type": "confirm",
+              "message": "Estabelecer acesso intraósseo",
+              "options": [
+                
+              ],
+              "next": {
+                "type": "question",
+                "message": "Acesso intraósseo estabelecido e patente?",
+                "next": {
+                  
+                },
+                "options": [
+                  {
+                    "title": "Sim",
+                    "type": "button",
+                    "next": {
+                      "type": "drug",
+                      "message": "Aplicar droga",
+                      "nextStep": "step3_2",
+                      "options": [
+                        {
+                          "title": "Acesso intraósseo",
+                          "description": "Adrenalina 1:1000",
+                          "dosage": "1 mL",
+                          "observations": "Infundir 20 mL de SF rápido, após Adrenalina.\nElevar o braço por 15s",
+                          "next": {
+                            
+                          },
+                          "nextStep": null
+                        }
+                      ]
+                    },
+                    "nextStep": null
+                  },
+                  {
+                    "title": "Não",
+                    "type": "button",
+                    "next": {
+                      "type": "question",
+                      "message": "Paciente com via aérea avançada?",
+                      "next": {
+                        
+                      },
+                      "options": [
+                        {
+                          "title": "Sim",
+                          "type": "button",
+                          "next": {
+                            "type": "drug",
+                            "message": "Aplicar droga",
+                            "nextStep": "step3_2",
+                            "options": [
+                              {
+                                "title": "Via aérea avançada",
+                                "description": "Adrenalina 1:1000",
+                                "dosage": "1 mL",
+                                "observations": "Infundir 20 mL de SF rápido, após Adrenalina.\nElevar o braço por 15s",
+                                "next": {
+                                  
+                                },
+                                "nextStep": null
+                              }
+                            ]
+                          },
+                          "nextStep": null
+                        },
+                        {
+                          "title": "Não",
+                          "type": "button",
+                          "next": {
+                            "type": "confirm-advanced-airway",
+                            "next": {
+                              
+                            },
+                            "nextStep": "step_monitor"
+                          },
+                          "nextStep": null
+                        }
+                      ]
+                    },
+                    "nextStep": null
+                  }
+                ],
+                "nextStep": null
+              },
+              "nextStep": null
+            },
+            "nextStep": null
+          }
+        ]
+      },
+      "nextStep": null
+    },
+    {
+      "slug": "step3_2",
+      "stepTitle": "Passo 3",
+      "action": "Monitorar",
+      "description": "Monitore os sinais vitais do paciente",
+      "next": {
+        
+      },
+      "options": {
+        "monitorTimer": 120
+      },
+      "nextStep": "step3_1"
+    },
+    {
+      "slug": "step_monitor",
+      "stepTitle": "",
+      "action": "Monitorar",
+      "description": "Analisar o rítmo no monitor a cada 2 minutos e trocar massageador",
+      "next": {
+        
+      },
+      "options": {
+        "monitorTimer": 120
+      },
+      "nextStep": "step3_1"
+    }
+  ],
+  "keyboard": [
+    {
+      "title": "Solicitar",
+      "description": "equipe, carro pcr e ambu",
+      "stepNumber": "1º",
+      "done": "no",
+      "monitor": "no",
+      "next": {
+        
+      },
+      "nextStep": null
+    },
+    {
+      "title": "Abrir",
+      "description": "vias aéreas",
+      "stepNumber": "2º",
+      "done": "no",
+      "monitor": "no",
+      "next": {
+        
+      },
+      "nextStep": null
+    },
+    {
+      "title": "Solicitar",
+      "description": "monitor",
+      "stepNumber": "3º",
+      "done": "no",
+      "monitor": "yes"
+    },
+    {
+      "title": "Solicitar",
+      "description": "acesso venoso",
+      "stepNumber": "4º",
+      "done": "no",
+      "monitor": "no",
+      "next": {
+        
+      },
+      "nextStep": null
+    },
+    {
+      "title": "Solicitar",
+      "description": "VIA AÉREA AVANÇADA",
+      "stepNumber": "",
+      "done": "no",
+      "monitor": "no",
+      "next": {
+        
+      },
+      "nextStep": null
+    },
+    {
+      "title": "Verificar",
+      "description": "Causas reversíveis 6h 5t",
+      "stepNumber": "",
+      "done": "no",
+      "monitor": "no",
+      "next": {
+        "type": "reversible-causes",
+        "title": "Causas reversíveis",
+        "list": [
+          {
+            "title": "Hipoxemia",
+            "next": {
+              "type": "reversible-causes-details",
+              "title": "Hipoxemia",
+              "history": "blablablalblalblalba",
+              "diagnosis": "blabla",
+              "observations": "bla"
+            }
+          }
+        ],
+        "next": {
+          
+        },
+        "nextStep": null
+      },
+      "nextStep": null
+    }
+  ]
+}
